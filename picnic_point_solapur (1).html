@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picnic Point Solapur - Nature's Paradise Awaits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: padding 0.3s;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #2ecc71;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .phone-link {
+            color: #2ecc71;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .book-btn {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.85), rgba(39, 174, 96, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%232ecc71"/><stop offset="100%" style="stop-color:%2327ae60"/></linearGradient></defs><rect fill="url(%23g)" width="1200" height="800"/><circle cx="200" cy="150" r="80" fill="%23fff" opacity="0.1"/><circle cx="900" cy="200" r="120" fill="%23fff" opacity="0.08"/><circle cx="1100" cy="600" r="100" fill="%23fff" opacity="0.1"/><path d="M0 600Q300 550 600 600T1200 600V800H0Z" fill="%2327ae60" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            background: white;
+            color: #27ae60;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .secondary-btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: #27ae60;
+            transform: translateY(-5px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #2ecc71;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .about-text h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #e8f8f5, #d5f4e6);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Amenities Section */
+        .amenities {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2f1);
+        }
+
+        .amenities-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(46, 204, 113, 0.15);
+            border-color: #2ecc71;
+        }
+
+        .amenity-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenity-card h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .amenity-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item::before {
+            content: '🌳';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            opacity: 0.3;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0);
+            transition: background 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+        }
+
+        .why-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .why-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #2ecc71;
+        }
+
+        .why-card h3 {
+            color: #2ecc71;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            color: #27ae60;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #e8f8f5, #d5f4e6);
+        }
+
+        .pricing-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #2ecc71;
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #27ae60;
+            margin: 1rem 0;
+        }
+
+        .pricing-card.featured .price-tag {
+            color: white;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .pricing-features li::before {
+            content: '✓ ';
+            color: #2ecc71;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2ecc71;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #e8f8f5, #d5f4e6);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .info-card h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #2ecc71;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #2ecc71;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #2ecc71;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">🌳 Picnic Point Solapur</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:+919876543210" class="phone-link">📞 +91 98765 43210</a>
+                <a href="#contact" class="book-btn">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Nature's Paradise in Solapur</h1>
+            <p class="hero-subtitle">Create Unforgettable Memories with Family & Friends in Maharashtra's Premier Picnic Destination</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="primary-btn">Book Your Visit</a>
+                <a href="#about" class="secondary-btn">Explore More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>50,000+</h3>
+                <p>Happy Visitors</p>
+            </div>
+            <div class="stat-item">
+                <h3>15 Acres</h3>
+                <p>Green Paradise</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+ Years</h3>
+                <p>Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.8★</h3>
+                <p>Customer Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">Welcome to Picnic Point Solapur</h2>
+        <p class="section-subtitle">Your Perfect Weekend Getaway in the Heart of Maharashtra</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Discover Your Natural Escape</h3>
+                <p>Located in the beautiful city of Solapur, Picnic Point is a sprawling 15-acre oasis of natural beauty and modern comfort. We've been creating unforgettable memories for families, friends, and corporate groups for over a decade.</p>
+                <br>
+                <p>Our meticulously maintained gardens, state-of-the-art facilities, and warm hospitality make us the premier choice for day outings, picnics, celebrations, and corporate events. Whether you're seeking a peaceful retreat or an adventure-filled day, Picnic Point offers something special for everyone.</p>
+                <br>
+                <p>Just a short drive from Solapur city center, we provide the perfect blend of accessibility and natural serenity. Come experience why thousands of families choose us year after year.</p>
+            </div>
+            <div class="about-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🌳</div>
+                    <h4>Lush Green Landscapes</h4>
+                    <p>Beautifully landscaped gardens</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Family Friendly</h4>
+                    <p>Safe for all ages</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h4>Instagram Worthy</h4>
+                    <p>Perfect photo spots</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h4>Event Spaces</h4>
+                    <p>Celebrations & gatherings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+        <h2 class="section-title">World-Class Amenities</h2>
+        <p class="section-subtitle">Everything You Need for a Perfect Day Out</p>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">🏞️</div>
+                <h3>Picnic Gazebos</h3>
+                <p>Spacious covered seating areas perfect for family picnics with tables and benches</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🍽️</div>
+                <h3>Food Court</h3>
+                <p>Multi-cuisine food options, refreshments, and local delicacies available on-site</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🎪</div>
+                <h3>Kids Play Zone</h3>
+                <p>Safe playground with swings, slides, and modern play equipment for children</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🚗</div>
+                <h3>Parking Facility</h3>
+                <p>Secure parking space for 100+ vehicles including cars, buses, and two-wheelers</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🌺</div>
+                <h3>Botanical Gardens</h3>
+                <p>Beautifully maintained flower gardens with exotic plants and seasonal blooms</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🚶</div>
+                <h3>Nature Trails</h3>
+                <p>Scenic walking paths through lush greenery perfect for morning and evening walks</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏛️</div>
+                <h3>Event Pavilion</h3>
+                <p>Large covered areas for corporate events, birthday parties, and celebrations</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🚻</div>
+                <h3>Clean Restrooms</h3>
+                <p>Modern, well-maintained washroom facilities with 24/7 cleaning service</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-
